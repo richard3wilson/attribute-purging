@@ -1,0 +1,44 @@
+<?php
+
+namespace App;
+
+use Larapack\AttributePurging\Purgeable;
+
+class User
+{
+  use Purgeable;
+  
+  /**
+   * @var array List of attribute names which should be purged
+   */ 
+  protected $purge = ['foo']; // set the attribute names you which to purge
+  
+  //...
+}
+Test:
+
+$user = new App\User;
+$user->foo = 'bar';
+$user->save(); // The attribute 'foo' will not be saved to the database.
+echo $user->foo; // Will still returns 'bar' as long you hold the same instance of the object.
+
+<html>
+	<head>
+	</head>
+		<title>My First Webpage</title>
+	</head>
+	<body bgcolor="#F0F8FF">
+		<h1 align="center">My First Webpage</h1>
+		<ol>
+			<li>man</li>
+			<li>woman</li>
+		</ol>
+		<ul>
+			<li>coffe</li>
+			<li>maize</li>
+		</ul>
+		<p>Welcome to my <strong>first</strong> webpage. I am writing this as the example of lavarel 5.6 package project you gave me.</p>
+	
+		<p>By learning html, I'll be able to create webpages like a <del>beginner</del> pro....<br> which I am of course.</p>
+	</body>
+</html> 
